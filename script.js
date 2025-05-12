@@ -414,6 +414,36 @@ function applyResponsiveStyles() {
 
 // קריאה ראשונית + חיבורים
 applyResponsiveStyles();
+// הוספת סגנון קטן לאנימציית לחיצה
+const style = document.createElement("style");
+style.innerHTML = `
+  .active-tap {
+    background-color: #dcdcdc !important;
+    transition: background-color 0.3s ease;
+  }
+`;
+document.head.appendChild(style);
+
+// פונקציה להבהוב קל בכפתור
+function flashButton(button) {
+  button.classList.add("active-tap");
+  setTimeout(() => {
+    button.classList.remove("active-tap");
+  }, 300);
+}
+
+// בדיקה אם משתמש בטלפון
+function isMobile() {
+  return /Mobi|Android/i.test(navigator.userAgent);
+}
+
+// אם מובייל - להפעיל אפקט לחיצה על הכפתורים
+if (isMobile()) {
+  btEnter.addEventListener("click", () => flashButton(btEnter));
+  btRest.addEventListener("click", () => flashButton(btRest));
+  btRemove.addEventListener("click", () => flashButton(btRemove));
+}
+
 let lastWindowWidth = window.innerWidth;
 
 window.addEventListener("resize", () => {
