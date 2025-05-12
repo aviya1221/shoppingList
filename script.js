@@ -126,7 +126,7 @@ btRest.addEventListener("click", () => {
     localStorage.clear();
     productIndex=1;
   }
-   btRest.blur();
+   btRest.style.backgroundColor = "white";
 });
 
 btRest.addEventListener("mouseover", () => {
@@ -156,7 +156,7 @@ btRemove.addEventListener("click", () => {
     list.removeChild(list.firstChild);
     localStorage.removeItem(`product ${--productIndex}`);
   }
-   btRemove.blur();
+  btRemove.style.backgroundColor = "white";
 });
 
 btRemove.addEventListener("mouseover", () => {
@@ -184,7 +184,7 @@ function add(event) {
     productIndex++;
     input.value = "";
   }
-   btEnter.blur();
+   btEnter.style.backgroundColor = "white";
 }
 
 // פונקציה ליצירת אלמנט מוצר
