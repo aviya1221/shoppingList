@@ -126,6 +126,7 @@ btRest.addEventListener("click", () => {
     localStorage.clear();
     productIndex=1;
   }
+   btRest.blur();
 });
 
 btRest.addEventListener("mouseover", () => {
@@ -155,6 +156,7 @@ btRemove.addEventListener("click", () => {
     list.removeChild(list.firstChild);
     localStorage.removeItem(`product ${--productIndex}`);
   }
+   btRemove.blur();
 });
 
 btRemove.addEventListener("mouseover", () => {
@@ -182,6 +184,7 @@ function add(event) {
     productIndex++;
     input.value = "";
   }
+   btEnter.blur();
 }
 
 // פונקציה ליצירת אלמנט מוצר
@@ -190,6 +193,8 @@ function newProduct(name) {
   newP.textContent = name;
   return newP;
 }
+
+
 // פונקציה להתאמת עיצוב רספונסיבי
 function applyResponsiveStyles() {
   // איפוס עיצובים קיימים לפני התאמה
