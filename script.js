@@ -409,6 +409,19 @@ function applyResponsiveStyles() {
 
 // קריאה ראשונית + חיבורים
 applyResponsiveStyles();
-window.addEventListener("resize", applyResponsiveStyles);
-window.addEventListener("orientationchange", applyResponsiveStyles);
+let lastWindowWidth = window.innerWidth;
+
+window.addEventListener("resize", () => {
+  const newWidth = window.innerWidth;
+  if (Math.abs(newWidth - lastWindowWidth) > 50) { 
+    applyResponsiveStyles(); 
+    lastWindowWidth = newWidth;
+  }
+});
+
+window.addEventListener("orientationchange", () => {
+  applyResponsiveStyles();
+  lastWindowWidth = window.innerWidth; // עדכון גם כאן
+});
+
 window.addEventListener("load", applyResponsiveStyles);
