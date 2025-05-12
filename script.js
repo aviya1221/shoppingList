@@ -167,6 +167,13 @@ btRemove.addEventListener("mouseover", () => {
 btRemove.addEventListener("mouseout", () => {
   btRemove.style.backgroundColor = "white";
 });
+
+// ביטול הבהוב כחול בטאץ'
+btEnter.style.webkitTapHighlightColor = "transparent";
+btRest.style.webkitTapHighlightColor = "transparent";
+btRemove.style.webkitTapHighlightColor = "transparent";
+
+
 let productIndex=1;
 // פונקציה להוספת מוצר לרשימה
 function add(event) {
@@ -193,6 +200,8 @@ function newProduct(name) {
   newP.textContent = name;
   return newP;
 }
+
+
 
 
 // פונקציה להתאמת עיצוב רספונסיבי
@@ -232,6 +241,8 @@ function applyResponsiveStyles() {
   header.style.fontSize = "";
   header.style.marginTop = "";
   header.style.transform = "";
+
+
 
   // התאמה לפי רוחב חלון
   const w = window.innerWidth;
